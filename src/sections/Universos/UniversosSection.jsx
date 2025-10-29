@@ -1,20 +1,31 @@
 import { useMemo, useState } from 'react'
 import './UniversosSection.scss'
+import cerveza1 from '../../assets/images/cervezas/cerveza-cuantica.jpg'
+import cafe1 from '../../assets/images/cafes/cafe1.jpg'
+import miel1 from '../../assets/images/miel/miel1.png'
 
-// MOCK: reemplazá con datos reales/Tienda Nube
+// Arrays de productos por categoría
 const DATA = {
   cervezas: [
-    { id:'c1', title:'Cuantica - Pilsen lata 473ml', price: 6000, img:'/assets/images/prod-pilsen.jpg', url:'https://tiendanube.com/cuantica/pilsen' },
-    { id:'c2', title:'Cuantica - IPA 473ml',         price: 6500, img:'/assets/images/prod-ipa.jpg',    url:'https://tiendanube.com/cuantica/ipa' },
-    { id:'c3', title:'Cuantica - APA 473ml',         price: 6300, img:'/assets/images/prod-apa.jpg',    url:'https://tiendanube.com/cuantica/apa' },
-    { id:'c4', title:'Cuantica - Stout 473ml',       price: 6800, img:'/assets/images/prod-stout.jpg',  url:'https://tiendanube.com/cuantica/stout' },
-    { id:'c5', title:'Cuantica - Lager 473ml',       price: 5900, img:'/assets/images/prod-lager.jpg',  url:'https://tiendanube.com/cuantica/lager' },
+    { id:'c1', title:'Cuantica - Pilsen lata 473ml', price: 6000, img: cerveza1, url:'https://tiendanube.com/cuantica/pilsen' },
+    { id:'c2', title:'Cuantica - IPA 473ml',         price: 6500, img: cerveza1, url:'https://tiendanube.com/cuantica/ipa' },
+    { id:'c3', title:'Cuantica - APA 473ml',         price: 6300, img: cerveza1, url:'https://tiendanube.com/cuantica/apa' },
+    { id:'c4', title:'Cuantica - Stout 473ml',       price: 6800, img: cerveza1, url:'https://tiendanube.com/cuantica/stout' },
+    { id:'c5', title:'Cuantica - Lager 473ml',       price: 5900, img: cerveza1, url:'https://tiendanube.com/cuantica/lager' },
   ],
   cafe: [
-    { id:'f1', title:'Café de especialidad 250g',    price: 8900, img:'/assets/images/prod-cafe.jpg',   url:'https://tiendanube.com/cuantica/cafe' },
+    { id:'f1', title:'Café de especialidad 250g',    price: 8900, img: cafe1, url:'https://tiendanube.com/cuantica/cafe' },
+    { id:'f2', title:'Café de especialidad 500g',    price: 15900, img: cafe1, url:'https://tiendanube.com/cuantica/cafe' },
+    { id:'f3', title:'Café de especialidad 1kg',     price: 29900, img: cafe1, url:'https://tiendanube.com/cuantica/cafe' },
+    { id:'f4', title:'Café en cápsulas 10u',         price: 7200, img: cafe1, url:'https://tiendanube.com/cuantica/cafe' },
+    { id:'f5', title:'Café en cápsulas 20u',         price: 14000, img: cafe1, url:'https://tiendanube.com/cuantica/cafe' },
   ],
   miel: [
-    { id:'m1', title:'Miel con terpenos 300g',       price: 7500, img:'/assets/images/prod-miel.jpg',   url:'https://tiendanube.com/cuantica/miel' },
+    { id:'m1', title:'Miel con terpenos 300g',       price: 7500, img: miel1, url:'https://tiendanube.com/cuantica/miel' },
+    { id:'m2', title:'Miel con terpenos 500g',       price: 12000, img: miel1, url:'https://tiendanube.com/cuantica/miel' },
+    { id:'m3', title:'Miel con terpenos 1kg',        price: 22000, img: miel1, url:'https://tiendanube.com/cuantica/miel' },
+    { id:'m4', title:'Miel con terpenos 250g',       price: 6500, img: miel1, url:'https://tiendanube.com/cuantica/miel' },
+    { id:'m5', title:'Miel con terpenos 750g',       price: 16000, img: miel1, url:'https://tiendanube.com/cuantica/miel' },
   ]
 }
 
@@ -35,12 +46,14 @@ export default function UniversosSection(){
   return (
     <section id="universos" className="universos">
       <div className="u-container">
-        <h2 className="u-title">NUESTROS UNIVERSOS</h2>
+        <div className="u-header">
+          <h2 className="u-title">NUESTROS UNIVERSOS</h2>
 
-        <div className="u-tabs" role="tablist" aria-label="Categorías">
-          <button className={`u-tab ${tab==='cervezas'?'active':''}`} onClick={()=>setTab('cervezas')}>CERVEZAS</button>
-          <button className={`u-tab ${tab==='cafe'?'active':''}`}      onClick={()=>setTab('cafe')}>CAFE</button>
-          <button className={`u-tab ${tab==='miel'?'active':''}`}      onClick={()=>setTab('miel')}>MIEL CON TERPENOS</button>
+          <div className="u-tabs" role="tablist" aria-label="Categorías">
+            <button className={`u-tab ${tab==='cervezas'?'active':''}`} onClick={()=>setTab('cervezas')}>CERVEZAS</button>
+            <button className={`u-tab ${tab==='cafe'?'active':''}`} onClick={()=>setTab('cafe')}>CAFÉ</button>
+            <button className={`u-tab ${tab==='miel'?'active':''}`} onClick={()=>setTab('miel')}>MIEL CON TERPENOS</button>
+          </div>
         </div>
 
         <div className="u-carousel">

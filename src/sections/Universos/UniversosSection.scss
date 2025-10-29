@@ -3,54 +3,94 @@
 .universos { background:#fff; color:#000; padding: 2.5rem 0 3rem; }
 .u-container { @include container(1200px); }
 
-.u-title{
+/* ENCABEZADO: título + tabs en una sola fila */
+.u-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Título */
+.u-title {
   font-family: 'new-spirit','Poppins',serif;
   font-size: clamp(1.8rem, 3.5vw, 3rem);
   letter-spacing: .01em;
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
-.u-tabs{
-  display:flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+/* Tabs */
+.u-tabs {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-.u-tab{
-  appearance:none; border:none; cursor:pointer;
+
+.u-tab {
+  appearance: none;
+  border: none;
+  cursor: pointer;
   background: var(--brand-primary);
-  color:#000; font-weight: 800; letter-spacing:.01em;
-  padding: .6rem 1.1rem; border-radius: 16px; text-transform: uppercase;
+  color: #000;
+  font-weight: 800;
+  letter-spacing: .01em;
+  padding: .6rem 1.1rem;
+  border-radius: 16px;
+  text-transform: uppercase;
   transition: transform .1s ease, filter .2s ease;
+
+  &.active {
+    filter: saturate(110%) contrast(105%);
+    transform: translateY(-1px);
+  }
 }
-.u-tab.active{ filter: saturate(110%) contrast(105%); transform: translateY(-1px); }
 
 /* Carrusel */
-.u-carousel { position: relative; }
+.u-carousel { 
+  position: relative;
+}
+
 .u-track{
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(240px, 1fr);
+  grid-auto-flow: column;                 /* 👉 columnas, no filas */
+  grid-auto-columns: minmax(260px, 1fr);  /* 👉 ancho de cada card */
   gap: 1.5rem;
-  overflow-x: auto;
+  overflow-x: auto;                       /* 👉 scroll horizontal */
   scroll-behavior: smooth;
   scrollbar-width: none;
-  padding: .25rem .25rem 3.5rem; /* espacio para flechas */
+  padding: .25rem .25rem 3.5rem;          /* espacio para flechas abajo */
 }
 .u-track::-webkit-scrollbar{ display:none; }
 
+
 /* Card */
 .u-card{
-  background: #eaeaea; /* gris claro como en el JPG */
+  background: #eaeaea;
   border: 1px solid rgba(0,0,0,.08);
   border-radius: 4px;
   display:flex; flex-direction: column; justify-content: space-between;
-  min-width: 260px; /* asegura 4 en desktop dentro de 1200px aprox */
+  overflow: hidden;
+  min-width: 260px;
+  height: 618px;
 }
 
 .u-media{
-  background: #d9d9d9; /* banda superior más clara */
-  height: 240px;
+  background: #d9d9d9;
+  height: 270px;
+  padding: 12px;
   display:grid; place-items:center;
+  overflow: hidden;
 }
-.u-media img{ max-height: 85%; width:auto; object-fit: contain; }
+.u-media img{
+  max-width: 100%;
+  max-height: 100%;
+  width:auto;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
 
 .u-body{ padding: 1rem; }
 .u-name{ font-size: 1rem; font-weight: 600; line-height:1.3; margin: 0 0 .75rem; }
@@ -59,7 +99,7 @@
 .u-buy{
   display:block; text-align:center;
   background:#000; color:#fff; text-decoration:none;
-  font-weight:700; padding:.7rem 1rem; border-radius: 0; /* botón rectangular negro */
+  font-weight:700; padding:.7rem 1rem; border-radius: 0;
 }
 
 /* Flechas abajo centradas */
