@@ -1,0 +1,18 @@
+@use '../../styles/mixins' as *;
+
+.promo{
+  background: var(--brand-primary); /* fucsia */
+  color: #000;
+  border-bottom: 1px solid var(--line);
+}
+.promo__container{
+  @include container(1200px);
+  min-height: 44px;
+  display:flex; align-items:center; gap:.5rem;
+  padding: .35rem 0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  flex-wrap: wrap;
+}
+.promo b{ font-weight: 800; }

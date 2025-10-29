@@ -1,0 +1,54 @@
+:root {
+  /* Brand core */
+  --brand-primary: #F554F8;   /* CTA, links, highlights */
+  --brand-secondary: #8D4AC4; /* hover/alt brand */
+  --brand-tertiary: #5C558A;  /* soportes, bordes suaves */
+
+  /* Surfaces (dark theme base) */
+  --bg: #000000;              /* body background */
+  --surface: #1C164A;         /* secciones, cards */
+  --surface-2: #392F6F;       /* superficies alternas */
+
+  /* Text */
+  --text: #FFFFFF;
+  --muted: rgba(255,255,255,0.72);
+  --muted-2: rgba(255,255,255,0.56);
+
+  /* Accents suaves (fondos/chips/badges) */
+  --accent-1: #FCCAFB;
+  --accent-2: #E3BFFF;
+  --accent-3: #C882F8;
+
+  /* Estados */
+  --success: #34A835;
+  --success-strong: #6AFE6B;
+  --warning: #FDB35E;
+  --warning-strong: #D5892F;
+
+  /* Neutrales cálidos (si usás bloques claros o bordes sutiles) */
+  --neutral-1: #A69C90;
+  --neutral-2: #8B6F55;
+  --neutral-3: #A0522D;
+
+  /* Lines & overlays */
+  --line: rgba(255,255,255,0.12);
+  --overlay: rgba(0,0,0,0.5);
+
+  /* Shadows / radii / spacing */
+  --radius: 16px;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  /* Gradients sugeridos */
+  --grad-brand: linear-gradient(135deg, #8D4AC4 0%, #F554F8 100%);
+  --grad-surface: linear-gradient(180deg, #1C164A 0%, #392F6F 100%);
+}
+
+/* Breakpoints */
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;

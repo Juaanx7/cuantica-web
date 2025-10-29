@@ -1,0 +1,15 @@
+@use './tokens' as tokens;
+
+// Media queries
+@mixin respond($bp) {
+  @if $bp == sm { @media (min-width: tokens.$bp-sm) { @content; } }
+  @else if $bp == md { @media (min-width: tokens.$bp-md) { @content; } }
+  @else if $bp == lg { @media (min-width: tokens.$bp-lg) { @content; } }
+  @else if $bp == xl { @media (min-width: tokens.$bp-xl) { @content; } }
+}
+
+// Container centrado
+@mixin container($max: 1200px) {
+  width: min(100% - 2rem, #{$max});
+  margin-inline: auto;
+}

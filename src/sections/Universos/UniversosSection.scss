@@ -1,0 +1,80 @@
+@use '../../styles/mixins' as *;
+
+.universos { background:#fff; color:#000; padding: 2.5rem 0 3rem; }
+.u-container { @include container(1200px); }
+
+.u-title{
+  font-family: 'new-spirit','Poppins',serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  letter-spacing: .01em;
+  margin: 0 0 1rem;
+}
+
+.u-tabs{
+  display:flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;
+}
+.u-tab{
+  appearance:none; border:none; cursor:pointer;
+  background: var(--brand-primary);
+  color:#000; font-weight: 800; letter-spacing:.01em;
+  padding: .6rem 1.1rem; border-radius: 16px; text-transform: uppercase;
+  transition: transform .1s ease, filter .2s ease;
+}
+.u-tab.active{ filter: saturate(110%) contrast(105%); transform: translateY(-1px); }
+
+/* Carrusel */
+.u-carousel { position: relative; }
+.u-track{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: .25rem .25rem 3.5rem; /* espacio para flechas */
+}
+.u-track::-webkit-scrollbar{ display:none; }
+
+/* Card */
+.u-card{
+  background: #eaeaea; /* gris claro como en el JPG */
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 4px;
+  display:flex; flex-direction: column; justify-content: space-between;
+  min-width: 260px; /* asegura 4 en desktop dentro de 1200px aprox */
+}
+
+.u-media{
+  background: #d9d9d9; /* banda superior más clara */
+  height: 240px;
+  display:grid; place-items:center;
+}
+.u-media img{ max-height: 85%; width:auto; object-fit: contain; }
+
+.u-body{ padding: 1rem; }
+.u-name{ font-size: 1rem; font-weight: 600; line-height:1.3; margin: 0 0 .75rem; }
+.u-price{ font-size: 1.6rem; font-weight: 900; margin-bottom: .75rem; }
+
+.u-buy{
+  display:block; text-align:center;
+  background:#000; color:#fff; text-decoration:none;
+  font-weight:700; padding:.7rem 1rem; border-radius: 0; /* botón rectangular negro */
+}
+
+/* Flechas abajo centradas */
+.u-arrows{
+  position:absolute; left:50%; bottom:.5rem; transform: translateX(-50%);
+  display:flex; gap:.75rem;
+}
+.u-nav{
+  width:40px; height:40px; border-radius:999px;
+  border:1px solid rgba(0,0,0,.2);
+  background:#e5e5e5; color:#000; cursor:pointer;
+  display:grid; place-items:center; font-size: 1.2rem;
+}
+
+@include respond(md){
+  .u-track{ grid-auto-columns: minmax(280px, 1fr); }
+  .u-media{ height: 260px; }
+}
