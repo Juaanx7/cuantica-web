@@ -54,21 +54,20 @@
 
 .u-track{
   display: grid;
-  grid-auto-flow: column;                 /* 👉 columnas, no filas */
-  grid-auto-columns: minmax(260px, 1fr);  /* 👉 ancho de cada card */
+  grid-auto-flow: column;                 
+  grid-auto-columns: minmax(260px, 1fr);  
   gap: 1.5rem;
-  overflow-x: auto;                       /* 👉 scroll horizontal */
+  overflow-x: auto;                       
   scroll-behavior: smooth;
   scrollbar-width: none;
-  padding: .25rem .25rem 3.5rem;          /* espacio para flechas abajo */
+  padding: .25rem .25rem 3.5rem;          
 }
 .u-track::-webkit-scrollbar{ display:none; }
 
 
 /* Card */
 .u-card{
-  background: #eaeaea;
-  border: 1px solid rgba(0,0,0,.08);
+  background: #ffffff;
   border-radius: 4px;
   display:flex; flex-direction: column; justify-content: space-between;
   overflow: hidden;
@@ -77,7 +76,7 @@
 }
 
 .u-media{
-  background: #d9d9d9;
+  background: #ffffff;
   height: 270px;
   padding: 12px;
   display:grid; place-items:center;
@@ -110,7 +109,7 @@
 .u-nav{
   width:40px; height:40px; border-radius:999px;
   border:1px solid rgba(0,0,0,.2);
-  background:#e5e5e5; color:#000; cursor:pointer;
+  background:#000000; color:#ffffff; cursor:pointer;
   display:grid; place-items:center; font-size: 1.2rem;
 }
 

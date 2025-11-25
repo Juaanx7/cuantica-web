@@ -124,20 +124,34 @@ export default function AboutSection() {
             ))}
 
         </div>
+        <div className="a-nav-bottom">
+          <button 
+            className="a-arrow" 
+            onClick={prev} 
+            aria-label="Anterior"
+          >
+            ‹
+          </button>
 
-        <button className="a-arrow a-arrow--left" onClick={prev} aria-label="Anterior">‹</button>
-        <button className="a-arrow a-arrow--right" onClick={next} aria-label="Siguiente">›</button>
-
-        <div className="a-dots" role="tablist" aria-label="Slides de quiénes somos">
+          <div className="a-dots">
             {SLIDES.map((s, i) => (
-            <button
+              <button
                 key={s.id}
                 className={`a-dot ${i === index ? 'active' : ''}`}
                 aria-selected={i === index}
                 onClick={() => goTo(i)}
                 aria-label={`Ir al slide ${i + 1}`}
-            />
+              />
             ))}
+          </div>
+
+          <button 
+            className="a-arrow" 
+            onClick={next} 
+            aria-label="Siguiente"
+          >
+            ›
+          </button>
         </div>
         </div>
     </section>
