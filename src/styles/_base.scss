@@ -2,24 +2,44 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.6;
 }
 
 /* Títulos con la tipografía display */
-h1,
-.display {
-  font-family: "new-spirit", "Poppins", serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "new-spirit", serif;
   font-weight: 400;
-  letter-spacing: -0.02em;
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
+.display,
+.section-title,
+.a-title,
+.u-title,
+.a-subtitle {
+  font-family: "new-spirit", serif !important;
+}
+
+button,
+a.btn,
+.u-tab,
+.a-arrow,
+.u-buy {
+  font-family: "new-spirit", serif !important;
+  font-weight: 400;
+  letter-spacing: .5px;
+}
+
+p,
+span,
+label,
+.a-text,
+.u-name,
+.u-price,
+.navbar a {
+  font-family: "Poppins", sans-serif !important;
+}
+
+html {
+  scroll-behavior: smooth;
 }

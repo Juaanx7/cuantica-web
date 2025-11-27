@@ -29,18 +29,30 @@ const DATA = {
   ]
 }
 
-export default function UniversosSection(){
-  const [tab, setTab] = useState('cervezas')
-  const items = useMemo(() => DATA[tab] ?? [], [tab])
+export default function UniversosSection() {
+  const [activeUniverse, setActiveUniverse] = useState('all')
+
+  // Lista de ítems que se muestran según el universo activo
+  const items = useMemo(() => {
+    if (activeUniverse === 'all') {
+      return [
+        ...DATA.cervezas,
+        ...DATA.cafe,
+        ...DATA.miel,
+      ]
+    }
+    
+    return DATA[activeUniverse] ?? []
+  }, [activeUniverse])
 
   const go = (dir) => () => {
     const track = document.querySelector('.u-track')
-    if(!track) return
+    if (!track) return
     const card = track.querySelector(':scope > .u-card')
-    if(!card) return
+    if (!card) return
     const gap = parseFloat(getComputedStyle(track).gap || 16)
-    const step = (card.getBoundingClientRect().width + gap) * 2 // desplaza de a 2
-    track.scrollBy({ left: dir * step, behavior:'smooth' })
+    const step = (card.getBoundingClientRect().width + gap) * 1 
+    track.scrollBy({ left: dir * step, behavior: 'smooth' })
   }
 
   return (
@@ -50,9 +62,24 @@ export default function UniversosSection(){
           <h2 className="u-title">NUESTROS UNIVERSOS</h2>
 
           <div className="u-tabs" role="tablist" aria-label="Categorías">
-            <button className={`u-tab ${tab==='cervezas'?'active':''}`} onClick={()=>setTab('cervezas')}>CERVEZAS</button>
-            <button className={`u-tab ${tab==='cafe'?'active':''}`} onClick={()=>setTab('cafe')}>CAFÉ</button>
-            <button className={`u-tab ${tab==='miel'?'active':''}`} onClick={()=>setTab('miel')}>MIEL CON TERPENOS</button>
+            <button
+              className={`u-tab ${activeUniverse === 'cervezas' ? 'active' : ''}`}
+              onClick={() => setActiveUniverse('cervezas')}
+            >
+              CERVEZAS
+            </button>
+            <button
+              className={`u-tab ${activeUniverse === 'cafe' ? 'active' : ''}`}
+              onClick={() => setActiveUniverse('cafe')}
+            >
+              CAFÉ
+            </button>
+            <button
+              className={`u-tab ${activeUniverse === 'miel' ? 'active' : ''}`}
+              onClick={() => setActiveUniverse('miel')}
+            >
+              MIEL CON TERPENOS
+            </button>
           </div>
         </div>
 
@@ -65,8 +92,17 @@ export default function UniversosSection(){
                 </div>
                 <div className="u-body">
                   <h3 className="u-name">{p.title}</h3>
-                  <div className="u-price">${p.price.toLocaleString('es-AR')},00</div>
-                  <a className="u-buy" href={p.url} target="_blank" rel="noreferrer">Comprar</a>
+                  <div className="u-price">
+                    ${p.price.toLocaleString('es-AR')},00
+                  </div>
+                  <a
+                    className="u-buy"
+                    href={p.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Comprar
+                  </a>
                 </div>
               </article>
             ))}

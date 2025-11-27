@@ -49,6 +49,7 @@ export default function Navbar() {
           <a href="#about">Quiénes somos</a>
           <a href="#contacto">Contacto</a>
           <a href="#preguntasfrecuentes">Preguntas frecuentes</a>
+          <a href="#blog">Blog</a>
           <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
         </nav>
       </div>
