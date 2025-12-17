@@ -4,7 +4,7 @@ import Hero from './components/Hero/Hero'
 import UniversosSection from './sections/Universos/UniversosSection'
 import AboutSection from './sections/About/AboutSection'
 import FAQSection from './sections/FAQ/FAQSection'
-import BlogSection from './sections/Blog/BlogSection'
+import ContactSection from './sections/Contacto/ContactSection'
 
 export default function App() {
   return (
@@ -18,7 +18,7 @@ export default function App() {
         <UniversosSection />
         <AboutSection />
         <FAQSection />
-        <BlogSection />
+        <ContactSection />
       </main>
     </>
   )

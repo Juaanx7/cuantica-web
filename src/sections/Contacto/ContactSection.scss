@@ -1,16 +1,16 @@
 @use '../../styles/mixins' as *;
 
-.blog {
+.contact {
   background: #fff;
   color: #000;
   padding: 3rem 0 4rem;
 }
 
-.blog__container {
+.contact__container {
   @include container(1200px);
 }
 
-.blog__title {
+.contact__title {
   font-family: 'new-spirit', serif;
   font-size: clamp(2rem, 3vw, 2.5rem);
   text-align: center;
